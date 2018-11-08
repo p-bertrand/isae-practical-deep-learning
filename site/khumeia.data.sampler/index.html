@@ -1,0 +1,1163 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation & Reference website">
+      
+      
+        <link rel="canonical" href="https://fchouteau.github.io/isae-practical-deep-learning-doc/khumeia.data.sampler/">
+      
+      
+        <meta name="author" content="Florient CHOUTEAU">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../imgs/icon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+    
+    
+      
+        <title>Khumeia.data.sampler - TP ISAE (WIP)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#tilessampler" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://fchouteau.github.io/isae-practical-deep-learning-doc/" title="TP ISAE (WIP)" class="md-header-nav__button md-logo">
+          
+            <img src="../imgs/icon.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                TP ISAE (WIP)
+              </span>
+              <span class="md-header-nav__topic">
+                Khumeia.data.sampler
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/fchouteau/isae-practical-deep-learning/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      isae-practical-deep-learning
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://fchouteau.github.io/isae-practical-deep-learning-doc/" title="TP ISAE (WIP)" class="md-nav__button md-logo">
+      
+        <img src="../imgs/icon.png" width="48" height="48">
+      
+    </a>
+    TP ISAE (WIP)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/fchouteau/isae-practical-deep-learning/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      isae-practical-deep-learning
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../1_presentation/" title="Presentation" class="md-nav__link">
+      Presentation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Practical session guidelines
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Practical session guidelines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../2_session_objectives/" title="Session objectives" class="md-nav__link">
+      Session objectives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../3_khumeia/" title="The khumeia framework" class="md-nav__link">
+      The khumeia framework
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4_interacting_with_data/" title="Interacting with data" class="md-nav__link">
+      Interacting with data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5_generating_datasets/" title="Generating datasets" class="md-nav__link">
+      Generating datasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../6_training/" title="Into keras territory" class="md-nav__link">
+      Into keras territory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../7_inference/" title="Predicting on full images" class="md-nav__link">
+      Predicting on full images
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../8_exploration/" title="Going further" class="md-nav__link">
+      Going further
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../9_deliveries/" title="Deliverable" class="md-nav__link">
+      Deliverable
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Example notebooks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Example notebooks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../html/eda.html" title="Exploratory data analysis & framework hands-on" class="md-nav__link">
+      Exploratory data analysis & framework hands-on
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../html/dataset_generation.html" title="Generating our dataset" class="md-nav__link">
+      Generating our dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../html/train.html" title="Training our model" class="md-nav__link">
+      Training our model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../html/evaluate.html" title="Predicting on full satellite images" class="md-nav__link">
+      Predicting on full satellite images
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      API Doc - Interating with data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        API Doc - Interating with data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.data.collection" title="khumeia.data.collection" class="md-nav__link">
+      khumeia.data.collection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.data.item" title="khumeia.data.item" class="md-nav__link">
+      khumeia.data.item
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.data.dataset" title="khumeia.data.dataset" class="md-nav__link">
+      khumeia.data.dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="." title="khumeia.data.sampler" class="md-nav__link">
+      khumeia.data.sampler
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      API Doc - Prediction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        API Doc - Prediction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.inference.engine" title="khumeia.inference.engine" class="md-nav__link">
+      khumeia.inference.engine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.inference.metrics" title="khumeia.inference.metrics" class="md-nav__link">
+      khumeia.inference.metrics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.inference.predictor" title="khumeia.inference.predictor" class="md-nav__link">
+      khumeia.inference.predictor
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      API Doc - Visualisation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        API Doc - Visualisation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.visualisation.image" title="khumeia.visualisation.image" class="md-nav__link">
+      khumeia.visualisation.image
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      API Doc - Regions of Interest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        API Doc - Regions of Interest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.roi.bounding_box" title="khumeia.roi.bounding_box" class="md-nav__link">
+      khumeia.roi.bounding_box
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.roi.groundtruth" title="khumeia.roi.groundtruth" class="md-nav__link">
+      khumeia.roi.groundtruth
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.roi.tile" title="khumeia.roi.tile" class="md-nav__link">
+      khumeia.roi.tile
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      API Doc - Utils
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        API Doc - Utils
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.get_data" title="khumeia.get_data" class="md-nav__link">
+      khumeia.get_data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.utils.io" title="khumeia.utils.io" class="md-nav__link">
+      khumeia.utils.io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../khumeia.utils.logger" title="khumeia.utils.logger" class="md-nav__link">
+      khumeia.utils.logger
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://keras.io" title="Link to keras documentation" class="md-nav__link">
+      Link to keras documentation
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tilessampler" title="TilesSampler" class="md-nav__link">
+    TilesSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tilessampler__init__" title="TilesSampler.__init__" class="md-nav__link">
+    TilesSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilessamplersample_tiles_from_candidates" title="TilesSampler.sample_tiles_from_candidates" class="md-nav__link">
+    TilesSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomsampler" title="RandomSampler" class="md-nav__link">
+    RandomSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#randomsampler__init__" title="RandomSampler.__init__" class="md-nav__link">
+    RandomSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomsamplersample_tiles_from_candidates" title="RandomSampler.sample_tiles_from_candidates" class="md-nav__link">
+    RandomSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomperitemsampler" title="RandomPerItemSampler" class="md-nav__link">
+    RandomPerItemSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#randomperitemsampler__init__" title="RandomPerItemSampler.__init__" class="md-nav__link">
+    RandomPerItemSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomperitemsamplersample_tiles_from_candidates" title="RandomPerItemSampler.sample_tiles_from_candidates" class="md-nav__link">
+    RandomPerItemSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stratifiedsampler" title="StratifiedSampler" class="md-nav__link">
+    StratifiedSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stratifiedsampler__init__" title="StratifiedSampler.__init__" class="md-nav__link">
+    StratifiedSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratifiedsamplersample_tiles_from_candidates" title="StratifiedSampler.sample_tiles_from_candidates" class="md-nav__link">
+    StratifiedSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stratifiedperitemsampler" title="StratifiedPerItemSampler" class="md-nav__link">
+    StratifiedPerItemSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stratifiedperitemsampler__init__" title="StratifiedPerItemSampler.__init__" class="md-nav__link">
+    StratifiedPerItemSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratifiedperitemsamplersample_tiles_from_candidates" title="StratifiedPerItemSampler.sample_tiles_from_candidates" class="md-nav__link">
+    StratifiedPerItemSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backgroundtopositiveratiosampler" title="BackgroundToPositiveRatioSampler" class="md-nav__link">
+    BackgroundToPositiveRatioSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backgroundtopositiveratiosampler__init__" title="BackgroundToPositiveRatioSampler.__init__" class="md-nav__link">
+    BackgroundToPositiveRatioSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backgroundtopositiveratiosamplersample_tiles_from_candidates" title="BackgroundToPositiveRatioSampler.sample_tiles_from_candidates" class="md-nav__link">
+    BackgroundToPositiveRatioSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backgroundtopositiveratioperitemsampler" title="BackgroundToPositiveRatioPerItemSampler" class="md-nav__link">
+    BackgroundToPositiveRatioPerItemSampler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backgroundtopositiveratioperitemsampler__init__" title="BackgroundToPositiveRatioPerItemSampler.__init__" class="md-nav__link">
+    BackgroundToPositiveRatioPerItemSampler.__init__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backgroundtopositiveratioperitemsamplersample_tiles_from_candidates" title="BackgroundToPositiveRatioPerItemSampler.sample_tiles_from_candidates" class="md-nav__link">
+    BackgroundToPositiveRatioPerItemSampler.sample_tiles_from_candidates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fchouteau/isae-practical-deep-learning/blob/master/docs/khumeia.data.sampler.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Khumeia.data.sampler</h1>
+                
+                <p><strong>Source:</strong> <a href="http://khumeia.org/khumeia/data/sampler.py#L0">khumeia/data/sampler.py#L0</a></p>
+<hr />
+<h2 id="tilessampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L11">TilesSampler</a><a class="headerlink" href="#tilessampler" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="tilessampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L16">TilesSampler.<code>__init__</code></a><a class="headerlink" href="#tilessampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="tilessamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L32">TilesSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#tilessamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h2 id="randomsampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L42">RandomSampler</a><a class="headerlink" href="#randomsampler" title="Permanent link">&para;</a></h2>
+<p>Samples randomly at most <code>nb_tiles_max</code> tiles from the candidates pool
+If with_replacement is activated, exactly nb_tiles_max
+<em>Note: you can target a specific label for extracting only n images from this label</em></p>
+<p>This is useful if you want to stratify manually instead of using more complex samplers</p>
+<hr />
+<h3 id="randomsampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L50">RandomSampler.<code>__init__</code></a><a class="headerlink" href="#randomsampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nb_tiles_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">target_label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="randomsamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L56">RandomSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#randomsamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h2 id="randomperitemsampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L67">RandomPerItemSampler</a><a class="headerlink" href="#randomperitemsampler" title="Permanent link">&para;</a></h2>
+<p>Samples randomly at most <code>nb_tiles_max</code> tiles from the candidates pool
+If with_replacement is activated, exactly nb_tiles_max
+Ensures that at most <code>nb_tiles_max/nb_items</code> tiles are sampled per item
+<em>Note: you can target a specific label for extracting only n tiles from this label.</em></p>
+<p>This is useful if you want to stratify manually instead of using more complex samplers</p>
+<hr />
+<h3 id="randomperitemsampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L76">RandomPerItemSampler.<code>__init__</code></a><a class="headerlink" href="#randomperitemsampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nb_tiles_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">target_label</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="randomperitemsamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L81">RandomPerItemSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#randomperitemsamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h2 id="stratifiedsampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L97">StratifiedSampler</a><a class="headerlink" href="#stratifiedsampler" title="Permanent link">&para;</a></h2>
+<p>Samples randomly at most <code>nb_tiles_max</code> tiles from the candidates pool
+Tries to balance labels (globally) to the limit of the number of available tiles / label
+If with_replacement, ensure that a balanced sample is exactly attained</p>
+<hr />
+<h3 id="stratifiedsampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L104">StratifiedSampler.<code>__init__</code></a><a class="headerlink" href="#stratifiedsampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nb_tiles_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="stratifiedsamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L108">StratifiedSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#stratifiedsamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h2 id="stratifiedperitemsampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L122">StratifiedPerItemSampler</a><a class="headerlink" href="#stratifiedperitemsampler" title="Permanent link">&para;</a></h2>
+<p>Samples randomly at most <code>nb_tiles_max</code> tiles from the candidates pool
+Tries to balance labels (globally) to the limit of the number of available tiles / label / item
+If with_replacement, ensure that a balanced sample is exactly attained</p>
+<hr />
+<h3 id="stratifiedperitemsampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L129">StratifiedPerItemSampler.<code>__init__</code></a><a class="headerlink" href="#stratifiedperitemsampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nb_tiles_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="stratifiedperitemsamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L133">StratifiedPerItemSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#stratifiedperitemsamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h2 id="backgroundtopositiveratiosampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L147">BackgroundToPositiveRatioSampler</a><a class="headerlink" href="#backgroundtopositiveratiosampler" title="Permanent link">&para;</a></h2>
+<p>Samples randomly <code>nb_positive_tiles_max</code> in non background classes, - while balancing items
+Then samples <code>background_to_positive_ratio</code> * <code>nb_positive_tiles_max</code> in background tiles</p>
+<hr />
+<h3 id="backgroundtopositiveratiosampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L153">BackgroundToPositiveRatioSampler.<code>__init__</code></a><a class="headerlink" href="#backgroundtopositiveratiosampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background_to_positive_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_positive_tiles_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> \
+    <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="backgroundtopositiveratiosamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L159">BackgroundToPositiveRatioSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#backgroundtopositiveratiosamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h2 id="backgroundtopositiveratioperitemsampler"><a href="http://khumeia.org/khumeia/data/sampler.py#L181">BackgroundToPositiveRatioPerItemSampler</a><a class="headerlink" href="#backgroundtopositiveratioperitemsampler" title="Permanent link">&para;</a></h2>
+<p>Samples randomly <code>nb_positive_tiles_max</code> in non background classes, - while balancing items
+Then samples <code>background_to_positive_ratio</code> * <code>nb_positive_tiles_max</code> in background tiles
+Do it per item</p>
+<hr />
+<h3 id="backgroundtopositiveratioperitemsampler__init__"><a href="http://khumeia.org/khumeia/data/sampler.py#L188">BackgroundToPositiveRatioPerItemSampler.<code>__init__</code></a><a class="headerlink" href="#backgroundtopositiveratioperitemsampler__init__" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">background_to_positive_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_positive_tiles_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> \
+    <span class="n">with_replacement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<hr />
+<h3 id="backgroundtopositiveratioperitemsamplersample_tiles_from_candidates"><a href="http://khumeia.org/khumeia/data/sampler.py#L196">BackgroundToPositiveRatioPerItemSampler.sample_tiles_from_candidates</a><a class="headerlink" href="#backgroundtopositiveratioperitemsamplersample_tiles_from_candidates" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_tiles_from_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">candidate_tiles</span><span class="p">)</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 ISAE-SUPAERO
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.5e60981f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
