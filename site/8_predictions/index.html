@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation & Reference website">
       
       
-        <link rel="canonical" href="https://fchouteau.github.io/isae-practical-deep-learning/khumeia.inference.predictor/">
+        <link rel="canonical" href="https://fchouteau.github.io/isae-practical-deep-learning/8_predictions/">
       
       
         <meta name="author" content="Florient CHOUTEAU & Matthieu Le Goff">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Khumeia.inference.predictor - TP ISAE (WIP)</title>
+        <title>Predicting on full satellite images (jupyter) - TP ISAE (WIP)</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#predictor" tabindex="1" class="md-skip">
+      <a href="#run-predictions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 TP ISAE (WIP)
               </span>
               <span class="md-header-nav__topic">
-                Khumeia.inference.predictor
+                Predicting on full satellite images (jupyter)
               </span>
             
           
@@ -269,10 +269,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Guidelines
@@ -360,11 +362,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../8_predictions/" title="Predicting on full satellite images (jupyter)" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Predicting on full satellite images (jupyter)" class="md-nav__link md-nav__link--active">
       Predicting on full satellite images (jupyter)
     </a>
+    
   </li>
 
         
@@ -518,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="." title="khumeia.inference.predictor" class="md-nav__link">
+    <a href="../khumeia.inference.predictor" title="khumeia.inference.predictor" class="md-nav__link">
       khumeia.inference.predictor
     </a>
   </li>
@@ -687,76 +698,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#predictor" title="Predictor" class="md-nav__link">
-    Predictor
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#predictorpredict_on_tile" title="Predictor.predict_on_tile" class="md-nav__link">
-    Predictor.predict_on_tile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#predictorpredict_on_tiles" title="Predictor.predict_on_tiles" class="md-nav__link">
-    Predictor.predict_on_tiles
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#demopredictor" title="DemoPredictor" class="md-nav__link">
-    DemoPredictor
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#demopredictor__init__" title="DemoPredictor.__init__" class="md-nav__link">
-    DemoPredictor.__init__
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#demopredictorpredict_on_tile" title="DemoPredictor.predict_on_tile" class="md-nav__link">
-    DemoPredictor.predict_on_tile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#demopredictorpredict_on_tiles" title="DemoPredictor.predict_on_tiles" class="md-nav__link">
-    DemoPredictor.predict_on_tiles
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -768,80 +711,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fchouteau/isae-practical-deep-learning/blob/master/docs/khumeia.inference.predictor.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fchouteau/isae-practical-deep-learning/blob/master/docs/8_predictions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Khumeia.inference.predictor</h1>
-                
-                <p><strong>Source:</strong> <a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L0">khumeia/inference/predictor.py#L0</a></p>
-<hr />
-<h2 id="predictor"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L4">Predictor</a><a class="headerlink" href="#predictor" title="Permanent link">&para;</a></h2>
-<p>A predictor is simply a wrapper over a model to predict aircraft or background
-FN predict_on_tile should return either [aircraft or background]
-use <strong>init</strong> to load your model !</p>
-<p>It supports batching if your class has an attribute batch_size</p>
-<hr />
-<h3 id="predictorpredict_on_tile"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L13">Predictor.predict_on_tile</a><a class="headerlink" href="#predictorpredict_on_tile" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">predict_on_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile_data</span><span class="p">)</span>
-</pre></div>
+                <h1 id="run-predictions">Run predictions<a class="headerlink" href="#run-predictions" title="Permanent link">&para;</a></h1>
+<!DOCTYPE html>
+<html>
+<body>
 
+<iframe width="1980" height="2000" src="../html/run_predictions.html">
+  <p>Your browser does not support iframes.</p>
+</iframe>
 
-<p>receives a numpy array, returns the label
-<em>Args:</em></p>
-<ul>
-<li><strong>tile_data</strong> (np.ndarray): </li>
-</ul>
-<p><em>Returns:</em></p>
-<p>"aircraft" or "background"</p>
-<hr />
-<h3 id="predictorpredict_on_tiles"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L25">Predictor.predict_on_tiles</a><a class="headerlink" href="#predictorpredict_on_tiles" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">predict_on_tiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tiles_data</span><span class="p">)</span>
-</pre></div>
-
-
-<p>If you want to implement batching
-<em>Args:</em></p>
-<ul>
-<li><strong>tiles_data</strong> (list[np.ndarray]):  A list of images</li>
-</ul>
-<p><em>Returns:</em></p>
-<p>A list of labels "aircraft" or "background"</p>
-<hr />
-<h2 id="demopredictor"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L38">DemoPredictor</a><a class="headerlink" href="#demopredictor" title="Permanent link">&para;</a></h2>
-<p>Dummy predictor randomly returning aircraft or background</p>
-<hr />
-<h3 id="demopredictor__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L43">DemoPredictor.<code>__init__</code></a><a class="headerlink" href="#demopredictor__init__" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<hr />
-<h3 id="demopredictorpredict_on_tile"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L48">DemoPredictor.predict_on_tile</a><a class="headerlink" href="#demopredictorpredict_on_tile" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">predict_on_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile_data</span><span class="p">)</span>
-</pre></div>
-
-
-<p>receives a numpy array, returns the label
-<em>Args:</em></p>
-<ul>
-<li><strong>tile_data</strong> (np.ndarray): </li>
-</ul>
-<p><em>Returns:</em></p>
-<p>"aircraft" or "background"</p>
-<hr />
-<h3 id="demopredictorpredict_on_tiles"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/src/khumeia/inference/predictor.py#L51">DemoPredictor.predict_on_tiles</a><a class="headerlink" href="#demopredictorpredict_on_tiles" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">predict_on_tiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tiles_data</span><span class="p">)</span>
-</pre></div>
-
-
-<p>If you want to implement batching
-<em>Args:</em></p>
-<ul>
-<li><strong>tiles_data</strong> (list[np.ndarray]):  A list of images</li>
-</ul>
-<p><em>Returns:</em></p>
-<p>A list of labels "aircraft" or "background"</p>
+<p></body>
+</html></p>
                 
                   
                 
@@ -858,6 +741,41 @@ use <strong>init</strong> to load your model !</p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../7_train/" title="Training our model (jupyter)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Training our model (jupyter)
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../9_exploration/" title="optional - Going further" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                optional - Going further
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

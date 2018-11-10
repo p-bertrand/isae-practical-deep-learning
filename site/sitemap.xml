@@ -2,77 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://fchouteau.github.io/isae-practical-deep-learning/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/2_session_objectives/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/1_objectives/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/1_gcp/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/2_gcp/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fchouteau.github.io/isae-practical-deep-learning/3_khumeia/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/4_interacting_with_data/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/4_hands_on/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/5_generating_datasets/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/5_generating/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/6_training/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/6_sliders/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/7_inference/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/7_train/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/8_exploration/</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/8_predictions/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/9_deliveries/</loc>
-     <lastmod>2018-11-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/html/exploratory_data_analysis.html</loc>
-     <lastmod>2018-11-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/html/dataset_generation.html</loc>
-     <lastmod>2018-11-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/html/sliders_and_samplers_showcase.html</loc>
-     <lastmod>2018-11-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/html/train.html</loc>
-     <lastmod>2018-11-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://fchouteau.github.io/isae-practical-deep-learning/html/run_predictions.html</loc>
-     <lastmod>2018-11-09</lastmod>
+     <loc>https://fchouteau.github.io/isae-practical-deep-learning/9_exploration/</loc>
+     <lastmod>2018-11-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
