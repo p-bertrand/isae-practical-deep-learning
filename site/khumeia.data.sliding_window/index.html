@@ -259,8 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1_objectives/" title="What we are going to do today" class="md-nav__link">
-      What we are going to do today
+    <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link">
+      Qu'allons nous faire aujourd'hui ?
     </a>
   </li>
 
@@ -275,11 +275,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -742,6 +742,8 @@
                 <p><strong>Source:</strong> <a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/data/sliding_window.py#L0">khumeia/data/sliding_window.py#L0</a></p>
 <hr />
 <h2 id="slidingwindow"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/data/sliding_window.py#L6">SlidingWindow</a><a class="headerlink" href="#slidingwindow" title="Permanent link">&para;</a></h2>
+<p>Sliding windows play an integral role in object classification, as they allow us to localize exactly “where” in an image an object resides.</p>
+<p>Sliding window approaches are simple in concept, a bounding box of the desired size(s) slides across the test image and at each location applies an image classifier to the current window</p>
 <p><img alt="example1" src="https://cdn-images-1.medium.com/max/800/1*FHEOyHm1BTWyygQcgvNSXQ.png" /></p>
 <p>Sample cutouts of a sliding window iterating from top to bottom (Imagery Courtesy of DigitalGlobe)</p>
 <p><img alt="example2" src="https://cdn-images-1.medium.com/max/800/1*BkQLxT_FVz6XqHul5qezEw.gif" /></p>
@@ -749,7 +751,7 @@
 An image classifier is applied to these cutouts and anything resembling a boat is saved as a positive (right)
 (Imagery Courtesy of DigitalGlobe)</p>
 <hr />
-<h3 id="slidingwindow__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/data/sliding_window.py#L21">SlidingWindow.<code>__init__</code></a><a class="headerlink" href="#slidingwindow__init__" title="Permanent link">&para;</a></h3>
+<h3 id="slidingwindow__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/data/sliding_window.py#L25">SlidingWindow.<code>__init__</code></a><a class="headerlink" href="#slidingwindow__init__" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">discard_background</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> \
     <span class="n">label_assignment_mode</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">intersection_over_area_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> \
     <span class="n">data_transform_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
@@ -758,25 +760,32 @@ An image classifier is applied to these cutouts and anything resembling a boat i
 
 <p><em>Args:</em></p>
 <ul>
-<li><strong>tile_size</strong>: </li>
-<li><strong>padding</strong>: </li>
-<li><strong>stride</strong>: </li>
-<li><strong>discard_background</strong>: </li>
-<li><strong>label_assignment_mode</strong>: </li>
-<li><strong>intersection_over_area_threshold</strong>: </li>
-<li><strong>data_transform_fn</strong>: </li>
+<li><strong>tile_size</strong> (int):  tile size (h,w) in pixels</li>
+<li><strong>padding</strong> (int):   padding in pixels. best keep it to 0</li>
+<li><strong>stride</strong> (int):  Stride ("pas") in pixels</li>
+<li><strong>discard_background</strong> (bool):  Don't return tiles with label Background</li>
+<li><strong>label_assignment_mode</strong>:  "center" or "ioa",
+  if center: If a tile contains a groundtruth's center it gets its label
+  if ioa: Calculates the intersection over min(area_tile,area_groundtruth), if the ioa &gt; threshold, then
+  assigns</li>
+<li><strong>intersection_over_area_threshold</strong> (float):  threshold</li>
+<li><strong>data_transform_fn</strong>:  Useful to generate augmented samples or to apply a specific preprocessing</li>
 </ul>
 <hr />
-<h3 id="slidingwindowget_tiles_for_item"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/data/sliding_window.py#L48">SlidingWindow.get_tiles_for_item</a><a class="headerlink" href="#slidingwindowget_tiles_for_item" title="Permanent link">&para;</a></h3>
+<h3 id="slidingwindowget_tiles_for_item"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/data/sliding_window.py#L55">SlidingWindow.get_tiles_for_item</a><a class="headerlink" href="#slidingwindowget_tiles_for_item" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">get_tiles_for_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
 </pre></div>
 
 
+<p>Apply the sliding window on a full satellite images to generate a list of tiles
+  Compares the tiles to the item's groundtruths
+  Tiles that matches the declared conditions are assigned with the groundtruth's label</p>
 <p><em>Args:</em></p>
 <ul>
-<li><strong>item</strong>: </li>
+<li><strong>item</strong> (khumeia.data.item.SatelliteImage):  input item</li>
 </ul>
 <p><em>Returns:</em></p>
+<p>list[LabelledTile]: A list of tile with their labels</p>
                 
                   
                 

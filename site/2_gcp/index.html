@@ -259,8 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1_objectives/" title="What we are going to do today" class="md-nav__link">
-      What we are going to do today
+    <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link">
+      Qu'allons nous faire aujourd'hui ?
     </a>
   </li>
 
@@ -277,11 +277,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -300,9 +300,80 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setting up your GCP instance
+      </label>
+    
     <a href="./" title="Setting up your GCP instance" class="md-nav__link md-nav__link--active">
       Setting up your GCP instance
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-pre-installation" title="0 - Pré installation" class="md-nav__link">
+    0 - Pré installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-se-connecter-a-google-cloud-shell" title="1 - Se connecter à Google Cloud Shell" class="md-nav__link">
+    1 - Se connecter à Google Cloud Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creer-une-instance-google-cloud-platform" title="2 - Créer une instance Google Cloud Platform" class="md-nav__link">
+    2 - Créer une instance Google Cloud Platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-faire-un-tunnel-ssh-depuis-votre-machine-vers-linstance" title="3 - Faire un tunnel ssh depuis votre machine vers l'instance" class="md-nav__link">
+    3 - Faire un tunnel ssh depuis votre machine vers l'instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ouvrir-votre-navigateur-internet-et-se-connecter-a-linstance" title="4 - Ouvrir votre navigateur internet et se connecter à l'instance" class="md-nav__link">
+    4 - Ouvrir votre navigateur internet et se connecter à l'instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lancer-un-jupyter-python3-puis-rentrer-au-moins-ces-commandes" title="5 - Lancer un jupyter python3 puis rentrer au moins ces commandes:" class="md-nav__link">
+    5 - Lancer un jupyter python3 puis rentrer au moins ces commandes:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4bis-plan-b-si-ca-ne-marche-pas" title="4bis plan B si ça ne marche pas" class="md-nav__link">
+    4bis plan B si ça ne marche pas
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -701,6 +772,64 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-pre-installation" title="0 - Pré installation" class="md-nav__link">
+    0 - Pré installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-se-connecter-a-google-cloud-shell" title="1 - Se connecter à Google Cloud Shell" class="md-nav__link">
+    1 - Se connecter à Google Cloud Shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creer-une-instance-google-cloud-platform" title="2 - Créer une instance Google Cloud Platform" class="md-nav__link">
+    2 - Créer une instance Google Cloud Platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-faire-un-tunnel-ssh-depuis-votre-machine-vers-linstance" title="3 - Faire un tunnel ssh depuis votre machine vers l'instance" class="md-nav__link">
+    3 - Faire un tunnel ssh depuis votre machine vers l'instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ouvrir-votre-navigateur-internet-et-se-connecter-a-linstance" title="4 - Ouvrir votre navigateur internet et se connecter à l'instance" class="md-nav__link">
+    4 - Ouvrir votre navigateur internet et se connecter à l'instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lancer-un-jupyter-python3-puis-rentrer-au-moins-ces-commandes" title="5 - Lancer un jupyter python3 puis rentrer au moins ces commandes:" class="md-nav__link">
+    5 - Lancer un jupyter python3 puis rentrer au moins ces commandes:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4bis-plan-b-si-ca-ne-marche-pas" title="4bis plan B si ça ne marche pas" class="md-nav__link">
+    4bis plan B si ça ne marche pas
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -717,6 +846,73 @@
                 <h1 id="installation-gcp">Installation GCP<a class="headerlink" href="#installation-gcp" title="Permanent link">&para;</a></h1>
 <p>Création et démarrage de l'instance Google Cloud Platform</p>
 <p><a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a></p>
+<h2 id="0-pre-installation">0 - Pré installation<a class="headerlink" href="#0-pre-installation" title="Permanent link">&para;</a></h2>
+<p>Vous devriez normalement avoir google cloud d'installé sur votre machine (et avoir déjà utilisé <code>gcloud</code>)</p>
+<h2 id="1-se-connecter-a-google-cloud-shell">1 - Se connecter à Google Cloud Shell<a class="headerlink" href="#1-se-connecter-a-google-cloud-shell" title="Permanent link">&para;</a></h2>
+<h2 id="2-creer-une-instance-google-cloud-platform">2 - Créer une instance Google Cloud Platform<a class="headerlink" href="#2-creer-une-instance-google-cloud-platform" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="nv">IMAGE_FAMILY</span><span class="o">=</span><span class="s2">&quot;tf-latest-gpu&quot;</span>
+<span class="nv">ZONE</span><span class="o">=</span><span class="s2">&quot;europe-west1-d&quot;</span>
+<span class="nv">INSTANCE_NAME</span><span class="o">=</span><span class="s2">&quot;tp-isae-dev-gpu&quot;</span> <span class="c1"># Vous pouvez renommer votre machine</span>
+
+gcloud compute instances create <span class="si">${</span><span class="nv">INSTANCE_NAME</span><span class="si">}</span> <span class="se">\</span>
+  --zone<span class="o">=</span><span class="si">${</span><span class="nv">ZONE</span><span class="si">}</span> <span class="se">\</span>
+  --image-family<span class="o">=</span><span class="si">${</span><span class="nv">IMAGE_FAMILY</span><span class="si">}</span> <span class="se">\</span>
+  --image-project<span class="o">=</span>deeplearning-platform-release <span class="se">\</span>
+  --machine-type<span class="o">=</span>n1-standard-8 <span class="se">\</span>
+  --maintenance-policy<span class="o">=</span>TERMINATE <span class="se">\</span>
+  --preemptible <span class="se">\</span>
+  --tags<span class="o">=</span>jupyter <span class="se">\</span>
+  --scopes default <span class="se">\</span>
+  --scopes storage-rw <span class="se">\</span>
+  --accelerator<span class="o">=</span><span class="s1">&#39;type=nvidia-tesla-k80,count=1&#39;</span> <span class="se">\</span>
+  --metadata<span class="o">=</span><span class="s1">&#39;install-nvidia-driver=True&#39;</span>
+</pre></div>
+
+
+<p>Si GCP refuse la création d'une instance pour manque de ressources, changez la zone (voir ici https://cloud.google.com/compute/docs/gpus/#introduction)</p>
+<p>Si vous vous rendez sur <a href="https://console.cloud.google.com/compute/instances">https://console.cloud.google.com/compute/instances</a> vous devriez voir votre instance en cours de création.
+Une fois celle-ci créée, ceci s'affiche</p>
+<div class="codehilite"><pre><span></span>NAME             ZONE            MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+tp-isae-dev-gpu  europe-west1-d  n1-standard-8  true         10.132.0.11  35.233.87.123  RUNNING
+</pre></div>
+
+
+<h2 id="3-faire-un-tunnel-ssh-depuis-votre-machine-vers-linstance">3 - Faire un tunnel <code>ssh</code> depuis votre machine vers l'instance<a class="headerlink" href="#3-faire-un-tunnel-ssh-depuis-votre-machine-vers-linstance" title="Permanent link">&para;</a></h2>
+<p>Normalement cela devrait marcher en 4G ou sur ISAE-EDU</p>
+<p>Depuis un terminal de votre machine (<em>pas google cloud shell</em>) où le gcloud SDK est installé:</p>
+<p><code>gcloud compute ssh --zone europe-west1-d (votre-nom-utilisateur-gcp)@tp-isae-dev-gpu -- -L localhost:8080:localhost:8080</code></p>
+<h2 id="4-ouvrir-votre-navigateur-internet-et-se-connecter-a-linstance">4 - Ouvrir votre navigateur internet et se connecter à l'instance<a class="headerlink" href="#4-ouvrir-votre-navigateur-internet-et-se-connecter-a-linstance" title="Permanent link">&para;</a></h2>
+<p><a href="http://localhost:8080/]">http://localhost:8080/</a></p>
+<h2 id="5-lancer-un-jupyter-python3-puis-rentrer-au-moins-ces-commandes">5 - Lancer un jupyter <strong>python3</strong> puis rentrer au moins ces commandes:<a class="headerlink" href="#5-lancer-un-jupyter-python3-puis-rentrer-au-moins-ces-commandes" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>%env TP_ISAE_DATA= ./data/`
+!pip3 install git+https://github.com/fchouteau/isae-practical-deep-learning.git#egg=khumeia\&amp;subdirectory=src
+</pre></div>
+
+
+<p>Une fois le package pip installé, vous pouvez supprimer la cellule (ou démarrer un autre notebook)
+Puis </p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">khumeia</span>
+
+<span class="n">khumeia</span><span class="o">.</span><span class="n">download_train_data</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Vous devriez voir un dossier <code>data/</code> créé à la racine ainsi que les logs suivants</p>
+<div class="codehilite"><pre><span></span>[2018-11-12 21:31:18,073][tp-isae][get_data][INFO] Downloading training data
+[2018-11-12 21:31:18,075][tp-isae][get_data][INFO] Downloading data from tp_isae_train_data.tar.gz to ./data/
+[2018-11-12 21:31:18,076][tp-isae][get_data][INFO] Downloading https://storage.googleapis.com/isae-deep-learning/tp_isae_train_data.tar.gz
+[2018-11-12 21:31:22,322][tp-isae][get_data][INFO] Extracting tar gz
+[2018-11-12 21:31:26,224][tp-isae][get_data][INFO] Done. Your training data is located here ./data/raw/trainval
+</pre></div>
+
+
+<p>C'est prêt !</p>
+<h2 id="4bis-plan-b-si-ca-ne-marche-pas">4bis plan B si ça ne marche pas<a class="headerlink" href="#4bis-plan-b-si-ca-ne-marche-pas" title="Permanent link">&para;</a></h2>
+<p>Directement depuis google cloud shell</p>
+<p>Depuis google cloud shell <code>gcloud compute ssh --zone europe-west1-d $USER@tp-isae-dev-gpu -- -L 8080:localhost:8080</code></p>
+<p>Ensuite "open web preview on port 8080"</p>
+<p>Avec un peu de chance ça marche...</p>
+<p>Sinon plan C...</p>
                 
                   
                 
@@ -737,7 +933,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../1_objectives/" title="What we are going to do today" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -746,7 +942,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                What we are going to do today
+                Qu'allons nous faire aujourd'hui ?
               </span>
             </div>
           </a>

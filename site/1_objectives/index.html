@@ -42,7 +42,7 @@
     
     
       
-        <title>What we are going to do today - TP ISAE [FR]</title>
+        <title>Qu'allons nous faire aujourd'hui ? - TP ISAE [FR]</title>
       
     
     
@@ -130,7 +130,7 @@
                 TP ISAE [FR]
               </span>
               <span class="md-header-nav__topic">
-                What we are going to do today
+                Qu'allons nous faire aujourd'hui ?
               </span>
             
           
@@ -268,11 +268,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        What we are going to do today
+        Qu'allons nous faire aujourd'hui ?
       </label>
     
-    <a href="./" title="What we are going to do today" class="md-nav__link md-nav__link--active">
-      What we are going to do today
+    <a href="./" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link md-nav__link--active">
+      Qu'allons nous faire aujourd'hui ?
     </a>
     
       
@@ -286,22 +286,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectives" title="Objectives" class="md-nav__link">
-    Objectives
+  <a href="#objectif-du-tp" title="Objectif du TP" class="md-nav__link">
+    Objectif du TP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="..." class="md-nav__link">
-    ...
+  <a href="#workflow" title="Workflow" class="md-nav__link">
+    Workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-assignment" title="Final assignment" class="md-nav__link">
-    Final assignment
+  <a href="#a-rendre" title=""A rendre"" class="md-nav__link">
+    "A rendre"
   </a>
   
 </li>
@@ -327,11 +327,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -746,22 +746,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objectives" title="Objectives" class="md-nav__link">
-    Objectives
+  <a href="#objectif-du-tp" title="Objectif du TP" class="md-nav__link">
+    Objectif du TP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="..." class="md-nav__link">
-    ...
+  <a href="#workflow" title="Workflow" class="md-nav__link">
+    Workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-assignment" title="Final assignment" class="md-nav__link">
-    Final assignment
+  <a href="#a-rendre" title=""A rendre"" class="md-nav__link">
+    "A rendre"
   </a>
   
 </li>
@@ -786,12 +786,35 @@
                 
                 
                 <h1 id="quallons-nous-faire-aujourdhui">Qu'allons nous faire aujourd'hui ?<a class="headerlink" href="#quallons-nous-faire-aujourdhui" title="Permanent link">&para;</a></h1>
-<h2 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h2>
-<p>Expliquer le but du tp</p>
-<h2 id="_1">...<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>...</p>
-<h2 id="final-assignment">Final assignment<a class="headerlink" href="#final-assignment" title="Permanent link">&para;</a></h2>
-<p>...</p>
+<h2 id="objectif-du-tp">Objectif du TP<a class="headerlink" href="#objectif-du-tp" title="Permanent link">&para;</a></h2>
+<p>L'objectif du TP est de mettre en application le cours de réseaux de neurones convolutifs sur un cas moins "direct" que classifier des photos de chats. Puisque nous sommes à SUPAERO, quoi de plus "appliqué" que de détecter des <em>avions dans les images satellites</em> ?</p>
+<p>Le résultat final du TP ressemble (l'animation en moins) à ceci (le problème est néanmoins posé différemment et il n'y a pas la jolie webapp):</p>
+<p><video width="640" height="480" controls>
+  <source src="../imgs/aircrafts.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> </p>
+<p>Le cas des images satellites demande un travail supplémentaire quant à la gestion des données et amène à se poser des questions qui nous semblent intéressantes au regard du travail de data scientist.</p>
+<p>Le Machine Learning, et le Deep Learning en particulier, étant une science relevant majoritairement de l'expérimentation, l'objectif numéro 1 du TP est de pouvoir manipuler et expérimenter dans un cadre assez libre, pour se construire sa propre "intuition" (et se confronter aux challenges -ou non - du Deep Learning).</p>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<p>Voici les étapes globales du processus:</p>
+<p><img alt="workflow" src="../imgs/workflow.png" /></p>
+<p>Ce processus est assez itératif, notamment à partir de la création du jeu d'entraînement.</p>
+<p>Le seul objectif du TP est d'obtenir un modèle entraîné par vos soins qui permet de faire des prédictions sur les 3 grandes images satellites du jeu de test, donc de dérouler le workflow une fois. On pourra ensuite s'intéresser aux parties "explorations" pour améliorer le modèle et surtout étudier l'impact des différents paramètres sur le résultat final.</p>
+<h2 id="a-rendre">"A rendre"<a class="headerlink" href="#a-rendre" title="Permanent link">&para;</a></h2>
+<p>L'objectif du TP étant la manipulation et une construction d'une expérience personelle, le seul rendu formel demandé (post séance) est un texte d'une "longueur honnête" répondant à la question "Qu'ai-je retiré de la séance"</p>
+<p>Les axes pourront être multiples, par exemple:</p>
+<ul>
+<li>Comment as été abordé le TP,  quelles ont été les décisions prises, pourquoi...</li>
+<li>L'aspect "matériel", installation etc...</li>
+<li>L'aspect code ("j'aime pas keras", "j'ai eu du mal avec...")</li>
+<li>L'aspect traitement des données </li>
+<li>Si expérience préalable en ML/DL: Est-ce que le TP a fait voir des aspects différents... </li>
+<li>C'était bien / pas bien / trop dur / pas assez dur ... </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Note en bas de page: Les encadrants de la filière SDD se réservent le droit de noter le rendu si personne ne joue le jeu</em></p>
+</div>
                 
                   
                 

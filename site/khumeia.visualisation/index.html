@@ -259,8 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1_objectives/" title="What we are going to do today" class="md-nav__link">
-      What we are going to do today
+    <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link">
+      Qu'allons nous faire aujourd'hui ?
     </a>
   </li>
 
@@ -275,11 +275,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -770,7 +770,7 @@
 </pre></div>
 
 
-<p>Draw one BoundingBox to an image using cv2.rectangle
+<p>Draw BoundingBoxes to an image using cv2.rectangle
 <em>Args:</em></p>
 <ul>
 <li><strong>image</strong>: </li>
@@ -785,7 +785,8 @@
 </pre></div>
 
 
-<p><em>Args:</em></p>
+<p>Draw an item labels on its image
+<em>Args:</em></p>
 <ul>
 <li><strong>item</strong>: </li>
 </ul>
@@ -796,10 +797,11 @@
 </pre></div>
 
 
-<p><em>Args:</em></p>
+<p>Draw an item labels on its images as well as the tiles in tiles
+<em>Args:</em></p>
 <ul>
 <li><strong>item</strong>: </li>
-<li><strong>tiles</strong>: </li>
+<li><strong>tiles</strong> (list[LabelledTIles]): </li>
 </ul>
 <p><em>Returns:</em></p>
 <hr />
@@ -808,7 +810,8 @@
 </pre></div>
 
 
-<p><em>Args:</em></p>
+<p>Draw an item labels on its images as well as the PredictionTiles in Tiles
+<em>Args:</em></p>
 <ul>
 <li><strong>item</strong>: </li>
 <li><strong>results</strong> (list[PredictionTile]): </li>

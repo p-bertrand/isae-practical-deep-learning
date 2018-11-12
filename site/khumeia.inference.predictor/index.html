@@ -259,8 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1_objectives/" title="What we are going to do today" class="md-nav__link">
-      What we are going to do today
+    <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link">
+      Qu'allons nous faire aujourd'hui ?
     </a>
   </li>
 
@@ -275,11 +275,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -767,6 +767,7 @@ use <strong>init</strong> to load your model !</p>
 
 
 <p>receives a numpy array, returns the label
+This should encapsulate preprocessing + self.model.predict() where self.model is the loaded keras model
 <em>Args:</em></p>
 <ul>
 <li><strong>tile_data</strong> (np.ndarray): </li>
@@ -774,12 +775,13 @@ use <strong>init</strong> to load your model !</p>
 <p><em>Returns:</em></p>
 <p>"aircraft" or "background"</p>
 <hr />
-<h3 id="predictorpredict_on_batch"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/predictor.py#L28">Predictor.predict_on_batch</a><a class="headerlink" href="#predictorpredict_on_batch" title="Permanent link">&para;</a></h3>
+<h3 id="predictorpredict_on_batch"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/predictor.py#L29">Predictor.predict_on_batch</a><a class="headerlink" href="#predictorpredict_on_batch" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">predict_on_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tiles_data</span><span class="p">)</span>
 </pre></div>
 
 
 <p>If you want to implement batching
+This should encapsulate preprocessing + self.model.predict_on_batch() where self.model is the loaded keras model
 <em>Args:</em></p>
 <ul>
 <li><strong>tiles_data</strong> (list[np.ndarray]):  A list of images</li>

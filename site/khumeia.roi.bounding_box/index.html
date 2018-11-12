@@ -259,8 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1_objectives/" title="What we are going to do today" class="md-nav__link">
-      What we are going to do today
+    <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link">
+      Qu'allons nous faire aujourd'hui ?
     </a>
   </li>
 
@@ -275,11 +275,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -819,18 +819,21 @@
                 <p><strong>Source:</strong> <a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L0">khumeia/roi/bounding_box.py#L0</a></p>
 <hr />
 <h2 id="boundingbox"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L5">BoundingBox</a><a class="headerlink" href="#boundingbox" title="Permanent link">&para;</a></h2>
-<p>Base bbox class</p>
+<p>Base bounding box class. A Bounding Box is basically a rectangle with x_min, y_min width and height
+We follow numpy and opencv image conventions:
+(0,0) is top left, x is right and 2nd dim, y is bottom and 1st dim
+So an image is a matrix of shape (height, width, 3) where the three channels are r,g,b</p>
 <h4 id="boundingboxarea">BoundingBox.area<a class="headerlink" href="#boundingboxarea" title="Permanent link">&para;</a></h4>
-<p><em>Returns:</em></p>
+<p><em>Returns: the area of the bbox</em></p>
 <h4 id="boundingboxcenter">BoundingBox.center<a class="headerlink" href="#boundingboxcenter" title="Permanent link">&para;</a></h4>
-<p><em>Returns:</em></p>
+<p><em>Returns: (x,y) the center (float) of the bbox</em></p>
 <h4 id="boundingboxkey">BoundingBox.key<a class="headerlink" href="#boundingboxkey" title="Permanent link">&para;</a></h4>
 <h4 id="boundingboxx_max">BoundingBox.x_max<a class="headerlink" href="#boundingboxx_max" title="Permanent link">&para;</a></h4>
 <p><em>Returns:</em></p>
 <h4 id="boundingboxy_max">BoundingBox.y_max<a class="headerlink" href="#boundingboxy_max" title="Permanent link">&para;</a></h4>
 <p><em>Returns:</em></p>
 <hr />
-<h3 id="boundingbox__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L10">BoundingBox.<code>__init__</code></a><a class="headerlink" href="#boundingbox__init__" title="Permanent link">&para;</a></h3>
+<h3 id="boundingbox__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L13">BoundingBox.<code>__init__</code></a><a class="headerlink" href="#boundingbox__init__" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 </pre></div>
 
@@ -843,35 +846,36 @@
 <li><strong>width</strong>: </li>
 </ul>
 <hr />
-<h3 id="boundingboxcontains"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L100">BoundingBox.contains</a><a class="headerlink" href="#boundingboxcontains" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxcontains"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L103">BoundingBox.contains</a><a class="headerlink" href="#boundingboxcontains" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
 </pre></div>
 
 
 <p><em>Args:</em></p>
 <ul>
-<li><strong>bbox</strong>: </li>
+<li><strong>bbox</strong> (BoundingBox): </li>
 </ul>
-<p><em>Returns:</em></p>
+<p><em>Returns: bool</em></p>
 <hr />
-<h3 id="boundingboxcontains_point"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L84">BoundingBox.contains_point</a><a class="headerlink" href="#boundingboxcontains_point" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxcontains_point"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L87">BoundingBox.contains_point</a><a class="headerlink" href="#boundingboxcontains_point" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">contains_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
 
 <p><em>Args:</em></p>
 <ul>
-<li><strong>point</strong>: </li>
-<li><strong>strict</strong>: </li>
+<li><strong>point</strong> (tuple):  (x,y)</li>
+<li><strong>strict</strong>:  strict inclusion or not</li>
 </ul>
 <p><em>Returns:</em></p>
 <hr />
-<h3 id="boundingboxfrom_bounds"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L24">BoundingBox.from_bounds</a><a class="headerlink" href="#boundingboxfrom_bounds" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxfrom_bounds"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L27">BoundingBox.from_bounds</a><a class="headerlink" href="#boundingboxfrom_bounds" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">from_bounds</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">)</span>
 </pre></div>
 
 
-<p><em>Args:</em></p>
+<p>Creates a BBox from x1,y1,x2,y2 instead of x1,y1,height,width
+<em>Args:</em></p>
 <ul>
 <li><strong>x_min</strong>: </li>
 <li><strong>y_min</strong>: </li>
@@ -880,29 +884,30 @@
 </ul>
 <p><em>Returns:</em></p>
 <hr />
-<h3 id="boundingboxintersection"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L130">BoundingBox.intersection</a><a class="headerlink" href="#boundingboxintersection" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxintersection"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L133">BoundingBox.intersection</a><a class="headerlink" href="#boundingboxintersection" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
 </pre></div>
 
 
 <p><em>Args:</em></p>
 <ul>
-<li><strong>bbox</strong>: </li>
+<li><strong>bbox</strong> (BoundingBox): </li>
 </ul>
 <p><em>Returns:</em></p>
+<p>BoundingBox if intersection else BoundingBox with height=0 and width=0</p>
 <hr />
-<h3 id="boundingboxintersects"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L114">BoundingBox.intersects</a><a class="headerlink" href="#boundingboxintersects" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxintersects"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L117">BoundingBox.intersects</a><a class="headerlink" href="#boundingboxintersects" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">intersects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
 </pre></div>
 
 
 <p><em>Args:</em></p>
 <ul>
-<li><strong>bbox</strong>: </li>
+<li><strong>bbox</strong> (BoundingBox): </li>
 </ul>
-<p><em>Returns:</em></p>
+<p><em>Returns: bool</em></p>
 <hr />
-<h3 id="boundingboxiou"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L148">BoundingBox.iou</a><a class="headerlink" href="#boundingboxiou" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxiou"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L151">BoundingBox.iou</a><a class="headerlink" href="#boundingboxiou" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">iou</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bbox</span><span class="p">)</span>
 </pre></div>
 
@@ -912,8 +917,9 @@
 <li><strong>bbox</strong>: </li>
 </ul>
 <p><em>Returns:</em></p>
+<p>intersection over union</p>
 <hr />
-<h3 id="boundingboxtranslate"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L166">BoundingBox.translate</a><a class="headerlink" href="#boundingboxtranslate" title="Permanent link">&para;</a></h3>
+<h3 id="boundingboxtranslate"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/roi/bounding_box.py#L170">BoundingBox.translate</a><a class="headerlink" href="#boundingboxtranslate" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">translate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_off</span><span class="p">,</span> <span class="n">y_off</span><span class="p">)</span>
 </pre></div>
 

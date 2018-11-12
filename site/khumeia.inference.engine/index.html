@@ -259,8 +259,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../1_objectives/" title="What we are going to do today" class="md-nav__link">
-      What we are going to do today
+    <a href="../1_objectives/" title="Qu'allons nous faire aujourd'hui ?" class="md-nav__link">
+      Qu'allons nous faire aujourd'hui ?
     </a>
   </li>
 
@@ -275,11 +275,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Guidelines
+      Guide du TP
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Guidelines
+        Guide du TP
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -749,24 +749,42 @@
                 <p><strong>Source:</strong> <a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L0">khumeia/inference/engine.py#L0</a></p>
 <hr />
 <h2 id="inferenceengine"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L7">InferenceEngine</a><a class="headerlink" href="#inferenceengine" title="Permanent link">&para;</a></h2>
+<p>Classe qui se comporte comme <code>Dataset</code> mais donne accès à la prédiction sur chaque tuile à l'aide d'une fenêtre glissante</p>
 <p><img alt="" src="https://cdn-images-1.medium.com/max/1600/1*uLk0eLyS8sYCqXTgEYcO6w.png" /></p>
 <hr />
-<h3 id="inferenceengine__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L12">InferenceEngine.<code>__init__</code></a><a class="headerlink" href="#inferenceengine__init__" title="Permanent link">&para;</a></h3>
+<h3 id="inferenceengine__init__"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L14">InferenceEngine.<code>__init__</code></a><a class="headerlink" href="#inferenceengine__init__" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Initialize self.  See help(type(self)) for accurate signature.</p>
 <hr />
-<h3 id="inferenceenginepredict_on_item"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L15">InferenceEngine.predict_on_item</a><a class="headerlink" href="#inferenceenginepredict_on_item" title="Permanent link">&para;</a></h3>
+<h3 id="inferenceenginepredict_on_item"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L17">InferenceEngine.predict_on_item</a><a class="headerlink" href="#inferenceenginepredict_on_item" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">predict_on_item</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">predictor</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sliding_windows</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
+<p><em>Args:</em></p>
+<ul>
+<li><strong>item</strong> (SatelliteImage):  the item on which to apply the prediction</li>
+<li><strong>predictor</strong> (Predictor):  A Predictor object that encapsulates our model</li>
+<li><strong>sliding_windows</strong> (SlidingWindow):  The sliding window used to generate candidates</li>
+</ul>
+<p><em>Returns:</em></p>
 <hr />
-<h3 id="inferenceenginepredict_on_items"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L48">InferenceEngine.predict_on_items</a><a class="headerlink" href="#inferenceenginepredict_on_items" title="Permanent link">&para;</a></h3>
+<h3 id="inferenceenginepredict_on_items"><a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/inference/engine.py#L60">InferenceEngine.predict_on_items</a><a class="headerlink" href="#inferenceenginepredict_on_items" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">predict_on_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predictor</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sliding_windows</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
+
+
+<p>Apply predictor + sliding window on all items in self.items
+<em>Args:</em></p>
+<ul>
+<li><strong>predictor</strong> (Predictor):  A Predictor object that encapsulates our model</li>
+<li><strong>sliding_windows</strong> (SlidingWindow):  The sliding window used to generate candidates</li>
+</ul>
+<p><em>Returns:</em></p>
+<p>A list of PredictionTile (Tile + predicted_label + groundtruth label)</p>
                 
                   
                 
