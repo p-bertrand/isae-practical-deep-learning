@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation & Reference Website">
       
       
-        <link rel="canonical" href="https://fchouteau.github.io/isae-practical-deep-learning/khumeia.utils.logger/">
+        <link rel="canonical" href="https://fchouteau.github.io/isae-practical-deep-learning/2_gcp_backup/">
       
       
         <meta name="author" content="Florient CHOUTEAU & Matthieu Le Goff">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Khumeia.utils.logger - TP ISAE [FR]</title>
+        <title>Installation GCP - TP ISAE [FR]</title>
       
     
     
@@ -104,6 +104,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#installation-gcp" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -126,7 +130,7 @@
                 TP ISAE [FR]
               </span>
               <span class="md-header-nav__topic">
-                Khumeia.utils.logger
+                Installation GCP
               </span>
             
           
@@ -634,7 +638,7 @@
 
 
   <li class="md-nav__item">
-    <a href="." title="khumeia.utils.logger" class="md-nav__link">
+    <a href="../khumeia.utils.logger" title="khumeia.utils.logger" class="md-nav__link">
       khumeia.utils.logger
     </a>
   </li>
@@ -676,17 +680,77 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plan-b-quand-ca-commence-a-sentir-le-roussi-parce-que-rien-ne-marche" title="Plan B Quand ça commence à sentir le roussi parce que rien ne marche" class="md-nav__link">
+    Plan B Quand ça commence à sentir le roussi parce que rien ne marche
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plan-z-quand-tout-le-reste-a-foire" title="Plan Z: Quand tout le reste a foiré..." class="md-nav__link">
+    Plan Z: Quand tout le reste a foiré...
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fchouteau/isae-practical-deep-learning/blob/master/docs/khumeia.utils.logger.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fchouteau/isae-practical-deep-learning/blob/master/docs/2_gcp_backup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Khumeia.utils.logger</h1>
-                
-                <p><strong>Source:</strong> <a href="https://github.com/fchouteau/isae-practical-deep-learning/tree/master/khumeia/utils/logger.py#L0">khumeia/utils/logger.py#L0</a></p>
+                <h1 id="installation-gcp">Installation GCP<a class="headerlink" href="#installation-gcp" title="Permanent link">&para;</a></h1>
+<h2 id="plan-b-quand-ca-commence-a-sentir-le-roussi-parce-que-rien-ne-marche">Plan B Quand ça commence à sentir le roussi parce que rien ne marche<a class="headerlink" href="#plan-b-quand-ca-commence-a-sentir-le-roussi-parce-que-rien-ne-marche" title="Permanent link">&para;</a></h2>
+<p><a href="https://colab.research.google.com/">https://colab.research.google.com/</a></p>
+<h2 id="plan-z-quand-tout-le-reste-a-foire">Plan Z: Quand tout le reste a foiré...<a class="headerlink" href="#plan-z-quand-tout-le-reste-a-foire" title="Permanent link">&para;</a></h2>
+<p>(Il faut avoir accès à la console Google Cloud)</p>
+<ul>
+<li>
+<p>Créer son instance GCP (avec le tag)</p>
+</li>
+<li>
+<p>Ouvrir les ports 8080 et 8081 sur le firewall GCP</p>
+</li>
+<li>
+<p>Se connecter en ssh sur son instance depuis GCP</p>
+</li>
+<li>
+<p>Télécharger une nouvelle conf jupyter</p>
+</li>
+<li>
+<p>Lancer un jupyter lab sur 8081</p>
+</li>
+<li>
+<p>Se connecter avec l'IP publique</p>
+</li>
+</ul>
                 
                   
                 
